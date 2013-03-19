@@ -100,6 +100,14 @@ EOF;
      {
        array_shift($options['directories']);
      }
+     if ($options['loop']) {
+       if (null === $atoumPath = \sfConfig::get('sf_atoum_path')) {
+         $atoumPath = __DIR__.'/../../../../lib/vendor/atoum/';
+       }
+       // Replace symfony command with atoum command, for passthru() call in atoum\scripts\runner::loop()
+       $_SERVER['argv'][0] = $atoumPath.'/bin/atoum';
+     }
+
      return $options;
    }
 
