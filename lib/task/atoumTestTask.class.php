@@ -129,8 +129,9 @@ EOF;
    {
      return array(
        'no-code-coverage' => \sfCommandOption::PARAMETER_NONE,
-      'testIt'            => \sfCommandOption::PARAMETER_NONE,
-      'loop'              => \sfCommandOption::PARAMETER_NONE,
+       'testIt'           => \sfCommandOption::PARAMETER_NONE,
+       'loop'             => \sfCommandOption::PARAMETER_NONE,
+       'force-terminal'   => \sfCommandOption::PARAMETER_NONE,
      );
    }
 
