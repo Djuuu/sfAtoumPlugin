@@ -132,6 +132,7 @@ EOF;
        'testIt'           => \sfCommandOption::PARAMETER_NONE,
        'loop'             => \sfCommandOption::PARAMETER_NONE,
        'force-terminal'   => \sfCommandOption::PARAMETER_NONE,
+       'debug'            => \sfCommandOption::PARAMETER_NONE,
      );
    }
 
