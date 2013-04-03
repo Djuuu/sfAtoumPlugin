@@ -14,7 +14,12 @@ if (!ProjectConfiguration::hasActive())
 }
 
 // autoloader
-sfAutoload::register();
+$autoload = sfSimpleAutoload::getInstance(sfConfig::get('sf_cache_dir').'/project_autoload.cache');
+$autoload->loadConfiguration(sfFinder::type('file')->name('autoload.yml')->in(array(
+  sfConfig::get('sf_symfony_lib_dir').'/config/config',
+  sfConfig::get('sf_config_dir'),
+)));
+$autoload->register();
 
 if (defined('\mageekguy\atoum\running') === false)
 {
