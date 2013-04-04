@@ -25,7 +25,7 @@ class atoumTestTask extends \sfBaseTask
     }
 
     require_once $atoumPath . '/classes/autoloader.php';
-
+    autoloader::setCacheFile(\sfConfig::get('sf_cache_dir').DIRECTORY_SEPARATOR.sprintf(autoloader::defaultCacheFileName, md5(__FILE__)));
 
     $this->namespace           = 'atoum';
     $this->name                = 'test';
